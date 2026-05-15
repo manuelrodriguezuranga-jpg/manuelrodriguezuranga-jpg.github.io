@@ -2,31 +2,319 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Recursos Humanos</title>
+    <style>
+        /* Diseño Minimalista Moderno */
+        :root {
+            --bg-principal: #f8fafc;
+            --bg-tarjeta: #ffffff;
+            --texto-primario: #1e293b;
+            --texto-secundario: #64748b;
+            --acento: #0f172a;
+            --acento-suave: #f1f5f9;
+            --borde: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-primario);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Encabezado */
+        header {
+            max-width: 800px;
+            margin: 40px auto 20px auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin: 0 0 8px 0;
+            color: var(--acento);
+        }
+
+        header p {
+            color: var(--texto-secundario);
+            margin: 0 0 24px 0;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--texto-secundario);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--acento);
+        }
+
+        /* Contenedores de Secciones */
+        section {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            background: var(--bg-tarjeta);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--borde);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--acento);
+        }
+
+        section > p {
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        /* Tablas Minimalistas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 14px 0;
+            text-align: left;
+            border-bottom: 1px solid var(--borde);
+        }
+
+        th {
+            font-weight: 600;
+            color: var(--texto-secundario);
+        }
+
+        td {
+            color: var(--texto-primario);
+        }
+
+        table a {
+            color: var(--acento);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        table a:hover {
+            border-color: var(--acento);
+        }
+
+        /* Listas */
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--texto-primario);
+            font-size: 0.95rem;
+        }
+
+        li strong {
+            color: var(--acento);
+            font-weight: 600;
+        }
+
+        /* Formularios Limpios */
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+        }
+
+        legend {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--acento);
+            margin-bottom: 16px;
+            padding: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--texto-secundario);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--borde);
+            border-radius: 6px;
+            background-color: var(--bg-principal);
+            color: var(--texto-primario);
+            font-family: inherit;
+            font-size: 0.9rem;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--acento);
+            background-color: var(--bg-tarjeta);
+        }
+
+        /* Opciones de Radio en bloque alineado */
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--texto-primario);
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+
+        input[type="radio"] {
+            margin: 0 10px 0 0;
+            accent-color: var(--acento);
+        }
+
+        input[type="file"] {
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+            margin-bottom: 20px;
+        }
+
+        /* Botones */
+        .form-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        input[type="submit"] {
+            background-color: var(--acento);
+            color: var(--bg-tarjeta);
+            border: 1px solid var(--acento);
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.9;
+        }
+
+        input[type="reset"] {
+            background-color: transparent;
+            color: var(--texto-secundario);
+            border: 1px solid var(--borde);
+        }
+
+        input[type="reset"]:hover {
+            background-color: var(--acento-suave);
+            color: var(--acento);
+        }
+
+        /* Pie de Página */
+        footer {
+            max-width: 800px;
+            margin: 60px auto 40px auto;
+            padding: 0 20px;
+            border-top: 1px solid var(--borde);
+            padding-top: 24px;
+        }
+
+        footer h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--acento);
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 24px;
+        }
+
+        footer li {
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+            margin-bottom: 6px;
+        }
+
+        footer small {
+            font-size: 0.8rem;
+            color: var(--texto-secundario);
+        }
+    </style>
 </head>
 <body>
 
     <!-- Encabezado Principal -->
     <header>
         <h1>Portal Interno de Recursos Humanos</h1>
-        <p>Bienvenido al sistema de gestión y atención al empleado.</p>
+        <p>Sistema simplificado de gestión y atención al empleado.</p>
         <nav>
             <ul>
-                <li><a href="#vacantes">Vacantes Disponibles</a></li>
-                <li><a href="#beneficios">Beneficios Laborales</a></li>
+                <li><a href="#vacantes">Vacantes</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
                 <li><a href="#solicitudes">Trámites y Solicitudes</a></li>
-                <li><a href="#contacto">Contacto de Soporte</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <hr>
 
     <!-- Sección 1: Bolsa de Trabajo / Vacantes -->
     <section id="vacantes">
         <h2>Oportunidades de Crecimiento Interno</h2>
         <p>Explora los puestos disponibles actualmente en la organización:</p>
         
-        <table border="1" cellpadding="8">
+        <table id="tabla-vacantes">
             <thead>
                 <tr>
                     <th>Puesto</th>
@@ -37,27 +325,26 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Analista de Datos Senior</td>
+                    <td class="puesto-nombre">Analista de Datos Senior</td>
                     <td>Tecnología</td>
                     <td>Remoto</td>
-                    <td><a href="#postular">Postularse</a></td>
+                    <td><a href="#solicitudes" class="btn-postular">Postularse</a></td>
                 </tr>
                 <tr>
-                    <td>Coordinador de Marketing</td>
+                    <td class="puesto-nombre">Coordinador de Marketing</td>
                     <td>Comercial</td>
                     <td>Híbrido</td>
-                    <td><a href="#postular">Postularse</a></td>
+                    <td><a href="#solicitudes" class="btn-postular">Postularse</a></td>
                 </tr>
                 <tr>
-                    <td>Especialista en Soporte Técnico</td>
+                    <td class="puesto-nombre">Especialista en Soporte Técnico</td>
                     <td>Operaciones</td>
                     <td>Presencial</td>
-                    <td><a href="#postular">Postularse</a></td>
+                    <td><a href="#solicitudes" class="btn-postular">Postularse</a></td>
                 </tr>
             </tbody>
         </table>
     </section>
-    <br><hr>
 
     <!-- Sección 2: Beneficios -->
     <section id="beneficios">
@@ -71,23 +358,23 @@
             <li><strong>Tiempo Libre:</strong> Día libre pagado por el mes de tu cumpleaños.</li>
         </ul>
     </section>
-    <br><hr>
 
     <!-- Sección 3: Formulario de Solicitudes -->
     <section id="solicitudes">
         <h2>Buzón de Solicitudes y Postulaciones</h2>
         <p>Utiliza este formulario oficial para enviar tus datos de postulación interna o reportar incidencias:</p>
         
-        <form action="#" method="post">
+        <form id="form-rh" action="#" method="post">
             <fieldset>
                 <legend>Datos Personales</legend>
-                <label for="nombre">Nombre Completo:</label><br>
-                <input type="text" id="nombre" name="nombre" required><br><br>
+                
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-                <label for="correo">Correo Electrónico Corporativo:</label><br>
-                <input type="email" id="correo" name="correo" required><br><br>
+                <label for="correo">Correo Electrónico Corporativo</label>
+                <input type="email" id="correo" name="correo" required>
 
-                <label for="area">Área Actual:</label><br>
+                <label for="area">Área Actual</label>
                 <select id="area" name="area">
                     <option value="ti">Tecnología</option>
                     <option value="mkt">Marketing</option>
@@ -95,41 +382,84 @@
                     <option value="ops">Operaciones / Administración</option>
                 </select>
             </fieldset>
-            <br>
+
             <fieldset>
                 <legend>Detalles del Requerimiento</legend>
-                <label for="tipo">Tipo de Solicitud:</label><br>
-                <input type="radio" id="tipo1" name="tiposolicitud" value="postulacion">
-                <label for="tipo1">Postulación Interna</label><br>
-                <input type="radio" id="tipo2" name="tiposolicitud" value="licencia">
-                <label for="tipo2">Solicitud de Licencia / Permiso</label><br>
-                <input type="radio" id="tipo3" name="tiposolicitud" value="queja">
-                <label for="tipo3">Sugerencia o Reporte</label><br><br>
+                
+                <label>Tipo de Solicitud</label>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" id="radio-postulacion" name="tiposolicitud" value="postulacion"> Postulación Interna</label>
+                    <label class="radio-label"><input type="radio" id="radio-licencia" name="tiposolicitud" value="licencia"> Solicitud de Licencia / Permiso</label>
+                    <label class="radio-label"><input type="radio" id="radio-queja" name="tiposolicitud" value="queja"> Sugerencia o Reporte</label>
+                </div>
 
-                <label for="mensaje">Mensaje o Justificación:</label><br>
-                <textarea id="mensaje" name="mensaje" rows="6" cols="40" placeholder="Escribe aquí los detalles..."></textarea><br><br>
+                <label for="mensaje">Mensaje o Justificación</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí los detalles..."></textarea>
 
-                <label for="archivo">Adjuntar Currículum o Comprobante (PDF):</label><br>
+                <label for="archivo">Adjuntar Archivo (PDF)</label>
                 <input type="file" id="archivo" name="archivo">
             </fieldset>
-            <br>
-            <input type="submit" value="Enviar Solicitud">
-            <input type="reset" value="Limpiar Formulario">
+
+            <div class="form-actions">
+                <input type="submit" value="Enviar Solicitud">
+                <input type="reset" value="Limpiar">
+            </div>
         </form>
     </section>
-    <br><hr>
 
     <!-- Pie de Página y Contacto -->
     <footer id="contacto">
         <h3>Contacto de Recursos Humanos</h3>
-        <p>¿Tienes dudas urgentes? Comunícate con nuestro equipo:</p>
         <ul>
             <li><strong>Teléfono de atención:</strong> Extensión 4500</li>
             <li><strong>Correo:</strong> rrhh@empresa.com</li>
             <li><strong>Horario:</strong> Lunes a Viernes de 9:00 AM a 6:00 PM</li>
         </ul>
-        <p><small>&copy; 2026 Empresa S.A. Todos los derechos reservados.</small></p>
+        <small>&copy; 2026 Empresa S.A. Todos los derechos reservados.</small>
     </footer>
+
+    <!-- Lógica de JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formulario = document.getElementById('form-rh');
+            const botonesPostular = document.querySelectorAll('.btn-postular');
+            const campoMensaje = document.getElementById('mensaje');
+            const radioPostulacion = document.getElementById('radio-postulacion');
+
+            // Auto-completar formulario desde la tabla
+            botonesPostular.forEach(boton => {
+                boton.addEventListener('click', (e) => {
+                    const fila = e.target.closest('tr');
+                    const nombrePuesto = fila.querySelector('.puesto-nombre').textContent;
+                    
+                    radioPostulacion.checked = true;
+                    campoMensaje.value = `Deseo postularme formalmente a la vacante interna de: ${nombrePuesto}. Adjunto mis datos para su revisión.`;
+                });
+            });
+
+            // Validación de formulario
+            formulario.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const correo = document.getElementById('correo').value.trim();
+                const tipoSolicitud = document.querySelector('input[name="tiposolicitud"]:checked');
+
+                if (!tiposolicitud) {
+                    alert('Por favor, selecciona un Tipo de Solicitud antes de enviar.');
+                    return;
+                }
+
+                if (!correo.endsWith('@empresa.com')) {
+                    alert('Error: Debes utilizar un correo corporativo que termine en @empresa.com');
+                    return;
+                }
+
+                alert(`¡Solicitud procesada con éxito!\n\nEmpleado: ${nombre}\nTipo de trámite: ${tipoSolicitud.value.toUpperCase()}`);
+                formulario.reset();
+            });
+        });
+    </script>
 
 </body>
 </html>
