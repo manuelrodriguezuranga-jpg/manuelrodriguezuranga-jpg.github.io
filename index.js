@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal de Recursos Humanos</title>
+    <style>
+        /* Estilos Generales y Tipografía */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333333;
+        }
+
+        /* Encabezado y Navegación */
+        header {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contenedor Principal de Secciones */
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: #1e3a8a;
+        }
+
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        table a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Listas de Beneficios */
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Formularios */
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #1e3a8a;
+            padding: 0 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+
+        input[type="reset"] {
+            background-color: #e2e8f0;
+            color: #475569;
+            margin-left: 10px;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #cbd5e1;
+        }
+
+        /* Pie de Página */
+        footer {
+            background-color: #334155;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        footer h3 {
+            margin-top: 0;
+            color: #94a3b8;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <h1>Portal Interno de Recursos Humanos</h1>
+        <p>Bienvenido al sistema de gestión y atención al empleado.</p>
+        <nav>
+            <ul>
+                <li><a href="#vacantes">Vacantes Disponibles</a></li>
+                <li><a href="#beneficios">Beneficios Laborales</a></li>
+                <li><a href="#solicitudes">Trámites y Solicitudes</a></li>
+                <li><a href="#contacto">Contacto de Soporte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección 1: Bolsa de Trabajo / Vacantes -->
+    <section id="vacantes">
+        <h2>Oportunidades de Crecimiento Interno</h2>
+        <p>Explora los puestos disponibles actualmente en la organización:</p>
+        
+        <table id="tabla-vacantes">
+            <thead>
+                <tr>
+                    <th>Puesto</th>
+                    <th>Departamento</th>
+                    <th>Ubicación</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="puesto-nombre">Analista de Datos Senior</td>
+                    <td>Tecnología</td>
+                    <td>Remoto</td>
+                    <td><a href="#solicitudes" class="btn-postular">Postularse</a></td>
+                </tr>
+                <tr>
+                    <td class="puesto-nombre">Coordinador de Marketing</td>
+                    <td>Comercial</td>
+                    <td>Híbrido</td>
+                    <td><a href="#solicitudes" class="btn-postular">Postularse</a></td>
+                </tr>
+                <tr>
+                    <td class="puesto-nombre">Especialista en Soporte Técnico</td>
+                    <td>Operaciones</td>
+                    <td>Presencial</td>
+                    <td><a href="#solicitudes" class="btn-postular">Postularse</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Sección 2: Beneficios -->
+    <section id="beneficios">
+        <h2>Nuestros Beneficios</h2>
+        <p>Como parte de nuestro equipo, tienes acceso a los siguientes programas:</p>
+        
+        <ul>
+            <li><strong>Salud y Bienestar:</strong> Seguro médico privado extensible a familiares directos.</li>
+            <li><strong>Desarrollo Profesional:</strong> Presupuesto anual asignado para cursos y certificaciones.</li>
+            <li><strong>Flexibilidad:</strong> Horarios flexibles y días de trabajo remoto coordinados.</li>
+            <li><strong>Tiempo Libre:</strong> Día libre pagado por el mes de tu cumpleaños.</li>
+        </ul>
+    </section>
+
+    <!-- Sección 3: Formulario de Solicitudes -->
+    <section id="solicitudes">
+        <h2>Buzón de Solicitudes y Postulaciones</h2>
+        <p>Utiliza este formulario oficial para enviar tus datos de postulación interna o reportar incidencias:</p>
+        
+        <form id="form-rh" action="#" method="post">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo Electrónico Corporativo:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="area">Área Actual:</label>
+                <select id="area" name="area">
+                    <option value="ti">Tecnología</option>
+                    <option value="mkt">Marketing</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="ops">Operaciones / Administración</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalles del Requerimiento</legend>
+                <label>Tipo de Solicitud:</label>
+                <label><input type="radio" id="radio-postulacion" name="tiposolicitud" value="postulacion"> Postulación Interna</label>
+                <label><input type="radio" id="radio-licencia" name="tiposolicitud" value="licencia"> Solicitud de Licencia / Permiso</label>
+                <label><input type="radio" id="radio-queja" name="tiposolicitud" value="queja"> Sugerencia o Reporte</label>
+
+                <label for="mensaje">Mensaje o Justificación:</label>
+                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe aquí los detalles..."></textarea>
+
+                <label for="archivo">Adjuntar Currículum o Comprobante (PDF):</label>
+                <input type="file" id="archivo" name="archivo">
+            </fieldset>
+
+            <input type="submit" value="Enviar Solicitud">
+            <input type="reset" value="Limpiar Formulario">
+        </form>
+    </section>
+
+    <!-- Pie de Página y Contacto -->
+    <footer id="contacto">
+        <h3>Contacto de Recursos Humanos</h3>
+        <p>¿Tienes dudas urgentes? Comunícate con nuestro equipo:</p>
+        <ul>
+            <li><strong>Teléfono de atención:</strong> Extensión 4500</li>
+            <li><strong>Correo:</strong> rrhh@empresa.com</li>
+            <li><strong>Horario:</strong> Lunes a Viernes de 9:00 AM a 6:00 PM</li>
+        </ul>
+        <p><small>&copy; 2026 Empresa S.A. Todos los derechos reservados.</small></p>
+    </footer>
+
+    <!-- Lógica de JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formulario = document.getElementById('form-rh');
+            const botonesPostular = document.querySelectorAll('.btn-postular');
+            const campoMensaje = document.getElementById('mensaje');
+            const radioPostulacion = document.getElementById('radio-postulacion');
+
+            // 1. Auto-completar el formulario al hacer clic en "Postularse" desde la tabla
+            botonesPostular.forEach(boton => {
+                boton.addEventListener('click', (e) => {
+                    // Obtiene el nombre del puesto de la fila correspondiente
+                    const fila = e.target.closest('tr');
+                    const nombrePuesto = fila.querySelector('.puesto-nombre').textContent;
+                    
+                    // Activa el radio button de postulación
+                    radioPostulacion.checked = true;
+                    
+                    // Escribe un mensaje predefinido en el cuadro de texto
+                    campoMensaje.value = `Deseo postularme formalmente a la vacante interna de: ${nombrePuesto}. Adjunto mis datos para su revisión.`;
+                });
+            });
+
+            // 2. Validación y control del envío del formulario
+            formulario.addEventListener('submit', (e) => {
+                e.preventDefault(); // Evita que la página se recargue
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const correo = document.getElementById('correo').value.trim();
+                const tipoSolicitud = document.querySelector('input[name="tiposolicitud"]:checked');
+
+                // Validación: Verificar que se seleccionó un tipo de solicitud
+                if (!tiposolicitud) {
+                    alert('Por favor, selecciona un Tipo de Solicitud antes de enviar.');
+                    return;
+                }
+
+                // Validación: El correo debe ser del dominio de la empresa (@empresa.com)
+                if (!correo.endsWith('@empresa.com')) {
+                    alert('Error: Debes utilizar un correo corporativo que termine en @empresa.com');
+                    return;
+                }
+
+                // Simulación de envío exitoso
+                alert(`¡Solicitud procesada con éxito!\n\nEmpleado: ${nombre}\nTipo de trámite: ${tipoSolicitud.value.toUpperCase()}\n\nNos comunicaremos contigo a tu correo corporativo.`);
+                
+                // Limpia el formulario después del envío exitoso
+                formulario.reset();
+            });
+        });
+    </script>
+
+</body>
+</html>

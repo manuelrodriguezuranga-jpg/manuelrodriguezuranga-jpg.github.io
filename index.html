@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal de Recursos Humanos</title>
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <h1>Portal Interno de Recursos Humanos</h1>
+        <p>Bienvenido al sistema de gestión y atención al empleado.</p>
+        <nav>
+            <ul>
+                <li><a href="#vacantes">Vacantes Disponibles</a></li>
+                <li><a href="#beneficios">Beneficios Laborales</a></li>
+                <li><a href="#solicitudes">Trámites y Solicitudes</a></li>
+                <li><a href="#contacto">Contacto de Soporte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+
+    <!-- Sección 1: Bolsa de Trabajo / Vacantes -->
+    <section id="vacantes">
+        <h2>Oportunidades de Crecimiento Interno</h2>
+        <p>Explora los puestos disponibles actualmente en la organización:</p>
+        
+        <table border="1" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Puesto</th>
+                    <th>Departamento</th>
+                    <th>Ubicación</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Analista de Datos Senior</td>
+                    <td>Tecnología</td>
+                    <td>Remoto</td>
+                    <td><a href="#postular">Postularse</a></td>
+                </tr>
+                <tr>
+                    <td>Coordinador de Marketing</td>
+                    <td>Comercial</td>
+                    <td>Híbrido</td>
+                    <td><a href="#postular">Postularse</a></td>
+                </tr>
+                <tr>
+                    <td>Especialista en Soporte Técnico</td>
+                    <td>Operaciones</td>
+                    <td>Presencial</td>
+                    <td><a href="#postular">Postularse</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br><hr>
+
+    <!-- Sección 2: Beneficios -->
+    <section id="beneficios">
+        <h2>Nuestros Beneficios</h2>
+        <p>Como parte de nuestro equipo, tienes acceso a los siguientes programas:</p>
+        
+        <ul>
+            <li><strong>Salud y Bienestar:</strong> Seguro médico privado extensible a familiares directos.</li>
+            <li><strong>Desarrollo Profesional:</strong> Presupuesto anual asignado para cursos y certificaciones.</li>
+            <li><strong>Flexibilidad:</strong> Horarios flexibles y días de trabajo remoto coordinados.</li>
+            <li><strong>Tiempo Libre:</strong> Día libre pagado por el mes de tu cumpleaños.</li>
+        </ul>
+    </section>
+    <br><hr>
+
+    <!-- Sección 3: Formulario de Solicitudes -->
+    <section id="solicitudes">
+        <h2>Buzón de Solicitudes y Postulaciones</h2>
+        <p>Utiliza este formulario oficial para enviar tus datos de postulación interna o reportar incidencias:</p>
+        
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for="nombre">Nombre Completo:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <label for="correo">Correo Electrónico Corporativo:</label><br>
+                <input type="email" id="correo" name="correo" required><br><br>
+
+                <label for="area">Área Actual:</label><br>
+                <select id="area" name="area">
+                    <option value="ti">Tecnología</option>
+                    <option value="mkt">Marketing</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="ops">Operaciones / Administración</option>
+                </select>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Detalles del Requerimiento</legend>
+                <label for="tipo">Tipo de Solicitud:</label><br>
+                <input type="radio" id="tipo1" name="tiposolicitud" value="postulacion">
+                <label for="tipo1">Postulación Interna</label><br>
+                <input type="radio" id="tipo2" name="tiposolicitud" value="licencia">
+                <label for="tipo2">Solicitud de Licencia / Permiso</label><br>
+                <input type="radio" id="tipo3" name="tiposolicitud" value="queja">
+                <label for="tipo3">Sugerencia o Reporte</label><br><br>
+
+                <label for="mensaje">Mensaje o Justificación:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="6" cols="40" placeholder="Escribe aquí los detalles..."></textarea><br><br>
+
+                <label for="archivo">Adjuntar Currículum o Comprobante (PDF):</label><br>
+                <input type="file" id="archivo" name="archivo">
+            </fieldset>
+            <br>
+            <input type="submit" value="Enviar Solicitud">
+            <input type="reset" value="Limpiar Formulario">
+        </form>
+    </section>
+    <br><hr>
+
+    <!-- Pie de Página y Contacto -->
+    <footer id="contacto">
+        <h3>Contacto de Recursos Humanos</h3>
+        <p>¿Tienes dudas urgentes? Comunícate con nuestro equipo:</p>
+        <ul>
+            <li><strong>Teléfono de atención:</strong> Extensión 4500</li>
+            <li><strong>Correo:</strong> rrhh@empresa.com</li>
+            <li><strong>Horario:</strong> Lunes a Viernes de 9:00 AM a 6:00 PM</li>
+        </ul>
+        <p><small>&copy; 2026 Empresa S.A. Todos los derechos reservados.</small></p>
+    </footer>
+
+</body>
+</html>
