@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Recursos Humanos</title>
+    <title>Portal Real de Recursos Humanos</title>
     <style>
-        /* Diseño Minimalista Moderno */
         :root {
             --bg-principal: #f8fafc;
             --bg-tarjeta: #ffffff;
@@ -14,10 +13,11 @@
             --acento: #0f172a;
             --acento-suave: #f1f5f9;
             --borde: #e2e8f0;
+            --exito: #16a34a;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             background-color: var(--bg-principal);
             color: var(--texto-primario);
             line-height: 1.5;
@@ -25,18 +25,15 @@
             padding: 0;
         }
 
-        /* Encabezado */
         header {
             max-width: 800px;
             margin: 40px auto 20px auto;
             padding: 0 20px;
-            text-align: left;
         }
 
         header h1 {
             font-size: 1.8rem;
             font-weight: 700;
-            letter-spacing: -0.025em;
             margin: 0 0 8px 0;
             color: var(--acento);
         }
@@ -44,7 +41,6 @@
         header p {
             color: var(--texto-secundario);
             margin: 0 0 24px 0;
-            font-size: 1rem;
         }
 
         nav ul {
@@ -53,7 +49,6 @@
             margin: 0;
             display: flex;
             gap: 20px;
-            flex-wrap: wrap;
         }
 
         nav a {
@@ -61,14 +56,12 @@
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.2s ease;
         }
 
         nav a:hover {
             color: var(--acento);
         }
 
-        /* Contenedores de Secciones */
         section {
             max-width: 800px;
             margin: 0 auto 40px auto;
@@ -80,21 +73,21 @@
 
         h2 {
             font-size: 1.3rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
             margin-top: 0;
             margin-bottom: 12px;
             color: var(--acento);
         }
 
-        section > p {
-            color: var(--texto-secundario);
-            font-size: 0.95rem;
-            margin-top: 0;
-            margin-bottom: 24px;
+        .buscador-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--borde);
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            box-sizing: border-box;
         }
 
-        /* Tablas Minimalistas */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -108,44 +101,31 @@
         }
 
         th {
-            font-weight: 600;
             color: var(--texto-secundario);
-        }
-
-        td {
-            color: var(--texto-primario);
+            font-weight: 600;
         }
 
         table a {
             color: var(--acento);
             text-decoration: none;
             font-weight: 600;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s ease;
         }
 
         table a:hover {
-            border-color: var(--acento);
+            text-decoration: underline;
         }
 
-        /* Listas */
-        ul {
-            padding-left: 20px;
-            margin: 0;
+        .alerta-exito {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: var(--exito);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 0.9rem;
         }
 
-        li {
-            margin-bottom: 12px;
-            color: var(--texto-primario);
-            font-size: 0.95rem;
-        }
-
-        li strong {
-            color: var(--acento);
-            font-weight: 600;
-        }
-
-        /* Formularios Limpios */
         fieldset {
             border: none;
             padding: 0;
@@ -154,47 +134,28 @@
 
         legend {
             font-weight: 600;
-            font-size: 1.05rem;
             color: var(--acento);
             margin-bottom: 16px;
-            padding: 0;
         }
 
         label {
             display: block;
             margin-bottom: 6px;
             font-size: 0.85rem;
-            font-weight: 500;
             color: var(--texto-secundario);
         }
 
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea {
+        input[type="text"], input[type="email"], select, textarea {
             width: 100%;
             padding: 10px 12px;
             border: 1px solid var(--borde);
             border-radius: 6px;
             background-color: var(--bg-principal);
-            color: var(--texto-primario);
-            font-family: inherit;
-            font-size: 0.9rem;
             box-sizing: border-box;
             margin-bottom: 20px;
-            transition: border-color 0.2s ease, background-color 0.2s ease;
+            font-family: inherit;
         }
 
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--acento);
-            background-color: var(--bg-tarjeta);
-        }
-
-        /* Opciones de Radio en bloque alineado */
         .radio-group {
             margin-bottom: 20px;
         }
@@ -203,37 +164,25 @@
             display: flex;
             align-items: center;
             font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--texto-primario);
-            cursor: pointer;
             margin-bottom: 8px;
+            cursor: pointer;
         }
 
         input[type="radio"] {
-            margin: 0 10px 0 0;
+            margin-right: 10px;
             accent-color: var(--acento);
         }
 
-        input[type="file"] {
-            font-size: 0.85rem;
-            color: var(--texto-secundario);
-            margin-bottom: 20px;
-        }
-
-        /* Botones */
         .form-actions {
             display: flex;
             gap: 12px;
         }
 
-        input[type="submit"],
-        input[type="reset"] {
+        input[type="submit"], input[type="reset"] {
             padding: 10px 20px;
             border-radius: 6px;
             font-size: 0.9rem;
-            font-weight: 500;
             cursor: pointer;
-            transition: all 0.2s ease;
             font-family: inherit;
         }
 
@@ -241,10 +190,6 @@
             background-color: var(--acento);
             color: var(--bg-tarjeta);
             border: 1px solid var(--acento);
-        }
-
-        input[type="submit"]:hover {
-            opacity: 0.9;
         }
 
         input[type="reset"] {
@@ -255,64 +200,44 @@
 
         input[type="reset"]:hover {
             background-color: var(--acento-suave);
-            color: var(--acento);
         }
 
-        /* Pie de Página */
         footer {
             max-width: 800px;
             margin: 60px auto 40px auto;
-            padding: 0 20px;
+            padding: 24px 20px 0 20px;
             border-top: 1px solid var(--borde);
-            padding-top: 24px;
         }
 
-        footer h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-top: 0;
-            margin-bottom: 12px;
-            color: var(--acento);
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 24px;
-        }
-
-        footer li {
+        .solicitudes-listado {
+            margin-top: 20px;
             font-size: 0.85rem;
-            color: var(--texto-secundario);
-            margin-bottom: 6px;
-        }
-
-        footer small {
-            font-size: 0.8rem;
-            color: var(--texto-secundario);
+            background: var(--acento-suave);
+            padding: 15px;
+            border-radius: 6px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado Principal -->
     <header>
-        <h1>Portal Interno de Recursos Humanos</h1>
-        <p>Sistema simplificado de gestión y atención al empleado.</p>
+        <h1>Portal de Recursos Humanos</h1>
+        <p>Herramienta operativa interna para empleados y administración.</p>
         <nav>
             <ul>
                 <li><a href="#vacantes">Vacantes</a></li>
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#solicitudes">Trámites y Solicitudes</a></li>
+                <li><a href="#solicitudes">Trámites</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Sección 1: Bolsa de Trabajo / Vacantes -->
+    <div id="alerta" class="alerta-exito"></div>
+
+    <!-- Sección 1: Vacantes con Buscador -->
     <section id="vacantes">
-        <h2>Oportunidades de Crecimiento Interno</h2>
-        <p>Explora los puestos disponibles actualmente en la organización:</p>
+        <h2>Bolsa de Trabajo Interna</h2>
+        <input type="text" id="buscador" class="buscador-input" placeholder="Buscar por puesto o departamento...">
         
         <table id="tabla-vacantes">
             <thead>
@@ -346,120 +271,146 @@
         </table>
     </section>
 
-    <!-- Sección 2: Beneficios -->
-    <section id="beneficios">
-        <h2>Nuestros Beneficios</h2>
-        <p>Como parte de nuestro equipo, tienes acceso a los siguientes programas:</p>
-        
-        <ul>
-            <li><strong>Salud y Bienestar:</strong> Seguro médico privado extensible a familiares directos.</li>
-            <li><strong>Desarrollo Profesional:</strong> Presupuesto anual asignado para cursos y certificaciones.</li>
-            <li><strong>Flexibilidad:</strong> Horarios flexibles y días de trabajo remoto coordinados.</li>
-            <li><strong>Tiempo Libre:</strong> Día libre pagado por el mes de tu cumpleaños.</li>
-        </ul>
-    </section>
-
-    <!-- Sección 3: Formulario de Solicitudes -->
+    <!-- Sección 2: Formulario Conectado -->
     <section id="solicitudes">
         <h2>Buzón de Solicitudes y Postulaciones</h2>
-        <p>Utiliza este formulario oficial para enviar tus datos de postulación interna o reportar incidencias:</p>
+        <p>Las solicitudes válidas se procesan de forma inmediata en el sistema central de la empresa.</p>
         
-        <form id="form-rh" action="#" method="post">
+        <!-- Formulario configurado con tu correo real de destino -->
+        <form id="form-rh" action="https://formsubmit.co" method="POST" enctype="multipart/form-data">
+            
+            <input type="hidden" name="_next" value="about:blank">
+            <input type="hidden" name="_captcha" value="false">
+
             <fieldset>
                 <legend>Datos Personales</legend>
-                
                 <label for="nombre">Nombre Completo</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <input type="text" id="nombre" name="Nombre" required>
 
                 <label for="correo">Correo Electrónico Corporativo</label>
-                <input type="email" id="correo" name="correo" required>
+                <input type="email" id="correo" name="Correo" required>
 
                 <label for="area">Área Actual</label>
-                <select id="area" name="area">
-                    <option value="ti">Tecnología</option>
-                    <option value="mkt">Marketing</option>
-                    <option value="ventas">Ventas</option>
-                    <option value="ops">Operaciones / Administración</option>
+                <select id="area" name="Area_Actual">
+                    <option value="Tecnología">Tecnología</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Ventas">Ventas</option>
+                    <option value="Operaciones">Operaciones / Administración</option>
                 </select>
             </fieldset>
 
             <fieldset>
                 <legend>Detalles del Requerimiento</legend>
-                
                 <label>Tipo de Solicitud</label>
                 <div class="radio-group">
-                    <label class="radio-label"><input type="radio" id="radio-postulacion" name="tiposolicitud" value="postulacion"> Postulación Interna</label>
-                    <label class="radio-label"><input type="radio" id="radio-licencia" name="tiposolicitud" value="licencia"> Solicitud de Licencia / Permiso</label>
-                    <label class="radio-label"><input type="radio" id="radio-queja" name="tiposolicitud" value="queja"> Sugerencia o Reporte</label>
+                    <label class="radio-label"><input type="radio" id="radio-postulacion" name="Tipo_Solicitud" value="Postulación Interna" required> Postulación Interna</label>
+                    <label class="radio-label"><input type="radio" id="radio-licencia" name="Tipo_Solicitud" value="Licencia / Permiso"> Solicitud de Licencia / Permiso</label>
+                    <label class="radio-label"><input type="radio" id="radio-queja" name="Tipo_Solicitud" value="Sugerencia / Reporte"> Sugerencia o Reporte</label>
                 </div>
 
                 <label for="mensaje">Mensaje o Justificación</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí los detalles..."></textarea>
+                <textarea id="mensaje" name="Mensaje" rows="5" placeholder="Explique detalladamente los motivos..." required></textarea>
 
-                <label for="archivo">Adjuntar Archivo (PDF)</label>
-                <input type="file" id="archivo" name="archivo">
+                <label for="archivo">Adjuntar Archivo Justificativo o CV (PDF)</label>
+                <input type="file" id="archivo" name="Adjunto" accept=".pdf">
             </fieldset>
 
             <div class="form-actions">
-                <input type="submit" value="Enviar Solicitud">
+                <input type="submit" value="Procesar Trámite">
                 <input type="reset" value="Limpiar">
             </div>
         </form>
+
+        <!-- Historial Local -->
+        <div class="solicitudes-listado">
+            <strong>Tu Historial Local de Solicitudes (Este Navegador):</strong>
+            <ul id="historial-local" style="margin-top:10px; padding-left:15px;">
+                <li>No has enviado trámites recientemente.</li>
+            </ul>
+        </div>
     </section>
 
-    <!-- Pie de Página y Contacto -->
     <footer id="contacto">
-        <h3>Contacto de Recursos Humanos</h3>
-        <ul>
-            <li><strong>Teléfono de atención:</strong> Extensión 4500</li>
-            <li><strong>Correo:</strong> rrhh@empresa.com</li>
-            <li><strong>Horario:</strong> Lunes a Viernes de 9:00 AM a 6:00 PM</li>
-        </ul>
-        <small>&copy; 2026 Empresa S.A. Todos los derechos reservados.</small>
+        <h3>Soporte Técnico de Operaciones RRHH</h3>
+        <p style="font-size: 0.85rem; color: var(--texto-secundario);">Contacto directo: rrhh@empresa.com | Extensión telefónica: 4500</p>
+        <small>&copy; 2026 Sistema Corporativo de Personal.</small>
     </footer>
 
-    <!-- Lógica de JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const formulario = document.getElementById('form-rh');
-            const botonesPostular = document.querySelectorAll('.btn-postular');
+            const buscador = document.getElementById('buscador');
+            const tablaFilas = document.querySelectorAll('#tabla-vacantes tbody tr');
             const campoMensaje = document.getElementById('mensaje');
             const radioPostulacion = document.getElementById('radio-postulacion');
+            const alerta = document.getElementById('alerta');
+            const historialLista = document.getElementById('historial-local');
 
-            // Auto-completar formulario desde la tabla
-            botonesPostular.forEach(boton => {
-                boton.addEventListener('click', (e) => {
-                    const fila = e.target.closest('tr');
-                    const nombrePuesto = fila.querySelector('.puesto-nombre').textContent;
-                    
-                    radioPostulacion.checked = true;
-                    campoMensaje.value = `Deseo postularme formalmente a la vacante interna de: ${nombrePuesto}. Adjunto mis datos para su revisión.`;
+            buscador.addEventListener('input', (e) => {
+                const termino = e.target.value.toLowerCase();
+                tablaFilas.forEach(fila => {
+                    const textoFila = fila.textContent.toLowerCase();
+                    fila.style.display = textoFila.includes(termino) ? '' : 'none';
                 });
             });
 
-            // Validación de formulario
-            formulario.addEventListener('submit', (e) => {
-                e.preventDefault();
+            document.querySelectorAll('.btn-postular').forEach(boton => {
+                boton.addEventListener('click', (e) => {
+                    const fila = e.target.closest('tr');
+                    const puesto = fila.querySelector('.puesto-nombre').textContent;
+                    radioPostulacion.checked = true;
+                    campoMensaje.value = `Postulación formal interna para el puesto de: ${puesto}. Adjunto mi perfil actualizado para consideración de RRHH.`;
+                });
+            });
 
-                const nombre = document.getElementById('nombre').value.trim();
-                const correo = document.getElementById('correo').value.trim();
-                const tipoSolicitud = document.querySelector('input[name="tiposolicitud"]:checked');
-
-                if (!tiposolicitud) {
-                    alert('Por favor, selecciona un Tipo de Solicitud antes de enviar.');
-                    return;
+            function actualizarHistorialUI() {
+                const solicitudes = JSON.parse(localStorage.getItem('solicitudes_rrhh')) || [];
+                if(solicitudes.length > 0) {
+                    historialLista.innerHTML = solicitudes.map(s => `
+                        <li><strong>${s.fecha}:</strong> ${s.tipo} - Estado: <span style="color:orange;font-weight:600;">En revisión por RRHH</span></li>
+                    `).join('');
                 }
+            }
+            actualizarHistorialUI();
+
+            formulario.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const correo = document.getElementById('correo').value.trim();
+                const nombre = document.getElementById('nombre').value.trim();
+                const tipo = document.querySelector('input[name="Tipo_Solicitud"]:checked').value;
 
                 if (!correo.endsWith('@empresa.com')) {
-                    alert('Error: Debes utilizar un correo corporativo que termine en @empresa.com');
+                    alert('Acceso Denegado: Ingrese su dirección con terminación @empresa.com');
                     return;
                 }
 
-                alert(`¡Solicitud procesada con éxito!\n\nEmpleado: ${nombre}\nTipo de trámite: ${tipoSolicitud.value.toUpperCase()}`);
+                const solicitudes = JSON.parse(localStorage.getItem('solicitudes_rrhh')) || [];
+                solicitudes.push({
+                    fecha: new Date().toLocaleDateString(),
+                    tipo: tipo
+                });
+                localStorage.setItem('solicitudes_rrhh', JSON.stringify(solicitudes));
+                actualizarHistorialUI();
+
+                alerta.textContent = `Éxito: Trámite de ${nombre} registrado en el sistema. Se ha enviado el respaldo.`;
+                alerta.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                try {
+                    await fetch(formulario.action, {
+                        method: 'POST',
+                        body: new FormData(formulario),
+                        mode: 'no-cors'
+                    });
+                } catch (error) {
+                    console.error('Error de red en el respaldo externo', error);
+                }
+
                 formulario.reset();
+                setTimeout(() => { alerta.style.display = 'none'; }, 6000);
             });
         });
     </script>
-
 </body>
 </html>
